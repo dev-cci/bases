@@ -1,34 +1,8 @@
-const characters = [
-    {
-        'name': 'René',
-        'age': 15,
-        'chaussures': [
-            {
-                'marque': 'vans',
-                'prix': 86
-            },
-            {
-                'marque': 'artengo',
-                'prix': 9
-            }
-        ]
-    },
-    {
-        'name': 'Michel',
-        'age': 20,
-        'chaussures': [
-            {
-                'marque': 'Jordan',
-                'prix': 12
-            },
-            {
-                'marque': 'Reebok',
-                'prix': 150
-            }
-        ]
-
-    },
-]
+function getCharacters() {
+     return fetch('./traitement.php')
+    .then(response => response.json())
+    .then(result => result)
+}
 
 function getCharactersCheapestShoes(characters) {
     let result = [];
@@ -45,17 +19,14 @@ function getCharactersCheapestShoes(characters) {
 }
 
 
-
-console.log(getCharactersCheapestShoes(characters))
-
-
-
-function code(){
+async function code() {
+const characters = await getCharacters();
+console.log(characters);
 let nom = document.getElementById('nom');
 let age = document.querySelector('#age');
 let shoes = document.getElementById('chaussures');
 
-characters[0].chaussures.forEach(item => {
+characters[0].shoes.forEach(item => {
     var newDiv = document.createElement("div");
     newDiv.innerHTML = item.marque;
     shoes.appendChild(newDiv);

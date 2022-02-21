@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +21,17 @@
 <div id="recup-perso">
     <p>récupérer un personnage</p>
 </div>
+
+<?php
+
+if (isset($_SESSION['test'])) {
+    echo $_SESSION['test'];
+}
+else {
+    echo 'pas de session test';
+}
+
+?>
 
 <script src="script.js"></script>
 </body>
