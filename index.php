@@ -8,16 +8,16 @@
 </head>
 <body>
 
-<?php
+<div id="mon-perso">
+    <div id="nom"></div>
+    <div id="age"></div>
+    <div id="chaussures"></div>
+</div>
 
-$table =[2, 5, 10, 15];
-$result = array_filter($table, "filtre");
+<div id="recup-perso">
+    <p>récupérer un personnage</p>
+</div>
 
-function filtre($number){
-    return $number<10;
-}
-var_dump($result);
-?>
 <script src="script.js"></script>
 </body>
 </html>
