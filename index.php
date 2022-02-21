@@ -10,10 +10,14 @@
 
 <?php
 
-echo "ok";
+$table =[2, 5, 10, 15];
+$result = array_filter($table, "filtre");
 
+function filtre($number){
+    return $number<10;
+}
+var_dump($result);
 ?>
-
 <script src="script.js"></script>
 </body>
 </html>
